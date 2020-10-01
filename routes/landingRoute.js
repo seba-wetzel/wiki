@@ -4,9 +4,7 @@ const landingRoute = express.Router();
 const { Page } = require('../models')
 
 landingRoute.get("/", (req, res, next) => {
-
     Page.findAll().then((results) => {
-        console.log(results)
         res.render('index', { pages: results })
     })
         .catch((err) => ext(err))
